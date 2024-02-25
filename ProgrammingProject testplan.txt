@@ -1,0 +1,34 @@
+# player
+- test no player
+- testing multiple 
+
+# Player movement
+- test no left movement
+- test no right movement
+- test no up movement 
+- test down movement
+
+
+# Start
+- test no starting point
+- test multiple starting points
+
+# Ending
+- test no end points
+- test multiple end points
+- test reaching the end goal
+
+# Maze generation
+- test empty maze
+- test maze width above 100
+- test maze height above 100
+- test maze width below 5
+- test maze height below 5
+- test incorrectly generated maze
+
+# boundary walls
+- test going beyond top wall
+- test going beyond bottom wall
+- test going beyond leftmost wall
+- test going beyond rightmost wall
+- test going through inner walls
