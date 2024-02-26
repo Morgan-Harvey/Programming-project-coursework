@@ -9,6 +9,7 @@ chmod +x <test.sh>
 echo -e "~~Symbol Precense~~\n"
 echo -n "no player present"
 
+./program 
 if grep -q "Player is not present";
 then
     echo "\e[32mPASS\e[0mm"

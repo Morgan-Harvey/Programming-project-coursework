@@ -13,7 +13,7 @@
 - test D input
 
 # command line arguments
-- no arguments-
+- no arguments
 - wrong number of args
 
 # file input
