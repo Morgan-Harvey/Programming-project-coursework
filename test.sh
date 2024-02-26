@@ -6,23 +6,45 @@ chmod +x <test.sh>
 ((all_counter++))
 
 
-./Program > tep
-echo -e "~~Symbol testing~~\n"
-echo -n "players testing"
+./Program > tmp
 
-if grep ;
+echo -e "~~Symbol Precense~~\n"
+echo -n "no player present"
+
+if grep -q "Player is not present";
 then
     echo "\e[32mPASS\e[0mm"
     ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
+
+echo -n "no player present"
+if grep -q "Start is not present";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+echo -n "no End present"
+if grep -q "End is not present";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+
+
 
 echo -e "~~player input~~\n"
 
-echo -n "Testing W input"
+echo -n "Testing unknown input"
 
-if grep -q ";
+if grep -q "Unknown Input detected";
 then
     echo "\e[32mPASS\e[0mm"
     ((pass_counter++))
@@ -30,11 +52,47 @@ else
     echo "\e[31mFAIL\e[0m"
 fi
 
-echo -n "Testing W input
+
+echo -n "Testing W input"
+
+if grep -q "You pressed W";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
 echo -n "Testing A input"
+
+if grep -q "You pressed A";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
 echo -n "Testing S input"
+
+if grep -q "You pressed S";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
 echo -n "Testing D input"
-echo -n "Testing unknown input"
+
+if grep -q "You have moved right";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
 
 
 echo -e "~~Maze generation~~\n"

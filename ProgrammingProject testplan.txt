@@ -2,33 +2,30 @@
 - test no player
 - testing multiple 
 
-# Player movement
-- test no left movement
-- test no right movement
-- test no up movement 
-- test down movement
-
-
-# Start
-- test no starting point
-- test multiple starting points
-
-# Ending
+# Symbol generation
+- test no player
 - test no end points
-- test multiple end points
-- test reaching the end goal
+- test no starting point
+
+# Player input
+- test unknown input
+- test W input
+- test A input
+- test S input
+- test D input
 
 # Maze generation
-- test empty maze
-- test maze width above 100
-- test maze height above 100
-- test maze width below 5
-- test maze height below 5
-- test incorrectly generated maze
+- test empty maze array
+- test maze 101 by 5
+- test maze 101 by 4
+- test maze 4 by 100
+- test maze 5 by 1001
+- test maze 101 by 4
 
 # boundary walls
-- test going beyond top wall
-- test going beyond bottom wall
-- test going beyond leftmost wall
-- test going beyond rightmost wall
-- test going through inner walls
+- going through wall above you
+- going through wall below you
+- going through wall to your left
+- going through wall to your right
+
+# update the maze
