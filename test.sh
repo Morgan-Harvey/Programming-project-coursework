@@ -6,8 +6,6 @@ chmod +x <test.sh>
 ((all_counter++))
 
 
-./Program > tmp
-
 echo -e "~~Symbol Precense~~\n"
 echo -n "no player present"
 
@@ -19,6 +17,8 @@ else
     echo "\e[31mFAIL\e[0m"
 fi
 
+
+
 echo -n "no player present"
 if grep -q "Start is not present";
 then
@@ -27,6 +27,8 @@ then
 else
     echo "\e[31mFAIL\e[0m"
 fi
+
+
 
 echo -n "no End present"
 if grep -q "End is not present";
@@ -37,11 +39,34 @@ else
     echo "\e[31mFAIL\e[0m"
 fi
 
+echo -n "Multiple start present"
+if grep -q "More than one start is present";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+
+echo -n "Multiple End present"
+if grep -q "more than one end is present";
+then
+    echo "\e[32mPASS\e[0mm"
+    ((pass_counter++))
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+
+
+
+
+
 
 
 
 echo -e "~~player input~~\n"
-
 echo -n "Testing unknown input"
 
 if grep -q "Unknown Input detected";
@@ -55,6 +80,7 @@ fi
 
 echo -n "Testing W input"
 
+./program 
 if grep -q "You pressed W";
 then
     echo "\e[32mPASS\e[0mm"
@@ -74,7 +100,7 @@ else
 fi
 
 echo -n "Testing S input"
-
+./program maps/valid/wall_testing.txt <inputs/Move down.txt> tmp
 if grep -q "You pressed S";
 then
     echo "\e[32mPASS\e[0mm"
@@ -102,7 +128,9 @@ echo -n "test maze 101 by 4"
 echo -n "test maze 4 by 100"
 echo -n "test maze 5 by 101"
 
-if grep ... ;
+
+
+if grep -q "Maze Height is too big" ;
 then
     echo "PASS"
     ((pass_counter++))
