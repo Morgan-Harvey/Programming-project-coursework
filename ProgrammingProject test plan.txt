@@ -2,14 +2,15 @@
 - no arguments
 - wrong number of args
 
-# file input
+# file Handling
 - wrong file name
 - bad permissions
 - succesful file loading
 
 # Maze generation
 - test empty maze array
-- irregular maze
+- test irregular maze height 
+- test irregular maze width
 - test maze 101 by 5
 - test maze 101 by 4
 - test maze 4 by 100
