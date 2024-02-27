@@ -2,8 +2,8 @@
 
 chmod +x test.sh
 
-# removed the permissions of the file to test for bad permissions
-chmod -r data/bad_perms.txt
+# removed the permissions of the maze to test for bad permissions
+chmod -r maps/invalid/bad_perms.txt
 
 
 
@@ -11,7 +11,7 @@ chmod -r data/bad_perms.txt
 echo -e "~~ Argument Tests ~~"
 echo -n "Testing no arguments - "
 ./program > tmp
-if grep -q "Usage: studentData <filename>" tmp;
+if grep -q "Usage: Program <filename>" tmp;
 then
     echo "PASS"
 else
@@ -19,7 +19,7 @@ else
 fi
 
 echo -n "Testing 2 arguments - "
-./Program y z > tmp
+./program y z > tmp
 if grep -q "Usage: Program <Maze file>" tmp;
 then
     echo "PASS"
@@ -100,7 +100,7 @@ fi
 
 echo -n "no End present"
 ./program maps/invalid/MissingEnd.txt > tmp
-if grep -q "End is not present";
+if grep -q "End is not present" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 
@@ -110,7 +110,7 @@ fi
 
 echo -n "Multiple start present"
 ./program maps/invalid/MultipleStart.txt > tmp
-if grep -q "More than one start is present";
+if grep -q "More than one start is present" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 else
@@ -120,7 +120,7 @@ fi
 
 echo -n "Multiple End present"
 ./program maps/invalid/MultipleEnd.txt > tmp
-if grep -q "more than one end is present";
+if grep -q "more than one end is present" tmp;
 then
     echo "\e[32mPASS\e[0mm"
     
@@ -241,7 +241,7 @@ fi
 
 echo -n "~~Goal~~\n"
 echo -n "reaching the goal"
-./programs maps/valid/reg_5x5.txt < inputs/Goal.txt > tmp;
+./program maps/valid/reg_5x5.txt < inputs/Goal.txt > tmp;
 if grep -q "you have reached the goal!" tmp;
 then
     echo "\e[32mPASS\e[0mm"
@@ -252,3 +252,4 @@ fi
 
 
 chmod +r data/bad_perms.csv
+rm -f tmp
