@@ -5,6 +5,8 @@ chmod +x test.sh
 # removed the permissions of the file to test for bad permissions
 chmod -r data/bad_perms.txt
 
+
+
 # testing errors in arguments
 echo -e "~~ Argument Tests ~~"
 echo -n "Testing no arguments - "
@@ -34,7 +36,7 @@ fi
 echo -e "\n~~ File Handling~~"
 
 echo -n "Testing bad mapname - "
-./studentData rge_1 x 5.txt > tmp
+./program noexist.txt > tmp
 if grep -q "Error: unknown map" tmp;
 then
     echo "PASS"
@@ -44,7 +46,7 @@ fi
 
 
 echo -n "Testing bad permissions - "
-./studentData maps/invalid/bad_perms.txt > tmp
+./program maps/invalid/bad_perms.txt > tmp
 if grep -q "Error: Bad permissions" tmp;
 then
     echo "PASS"
@@ -53,7 +55,7 @@ else
 fi
 
 echo -n "Testing successful file loading - "
-./studentData maps/valid/reg_5x5.txt.txt > tmp
+./program maps/valid/reg_5x5.txt.txt > tmp
 if grep -q "Map has loaded succesfully" tmp;
 then
     echo "PASS"
@@ -101,7 +103,7 @@ echo -n "no End present"
 if grep -q "End is not present";
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
+
 else
     echo "\e[31mFAIL\e[0m"
 fi
@@ -111,7 +113,6 @@ echo -n "Multiple start present"
 if grep -q "More than one start is present";
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
@@ -122,7 +123,7 @@ echo -n "Multiple End present"
 if grep -q "more than one end is present";
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
+    
 else
     echo "\e[31mFAIL\e[0m"
 fi
@@ -195,37 +196,37 @@ fi
 
 
 echo -e "~~Boundaries and walls~~\n"
+
 echo -n "wall above"
-
 ./program maps/valid/wall_testing.txt < inputs/Move_up.txt > tmp
-if grep -q "You hit a wall ";
+if grep -q "You hit a wall" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 else
     echo "\e[31mFAIL\e[0m"
 fi
 
-echo -n "Testing A input"
+echo -n "Wall to the left"
 ./program maps/valid/wall_testing.txt < inputs/Move_left.txt > tmp
-if grep -q "You pressed A";
+if grep -q "You hit a wall" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 else
     echo "\e[31mFAIL\e[0m"
 fi
 
-echo -n "Testing S input"
+echo -n "Wall below"
 ./program maps/valid/wall_testing.txt < inputs/Move_down.txt > tmp
-if grep -q "You pressed S";
+if grep -q "You hit a wall" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 else
     echo "\e[31mFAIL\e[0m"
 fi
 
-echo -n "Testing D input"
+echo -n "Wall to the right"
 ./program maps/valid/wall_texting.txt < inputs/Move_right.txt > tmp
-if grep -q "You have moved right";
+if grep -q "You hit a wall" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 else
@@ -241,16 +242,12 @@ fi
 echo -n "~~Goal~~\n"
 echo -n "reaching the goal"
 ./programs maps/valid/reg_5x5.txt < inputs/Goal.txt > tmp;
-if grep -q "you have reached the goal!" tmp
+if grep -q "you have reached the goal!" tmp;
 then
     echo "\e[32mPASS\e[0mm"
 else
     echo "\e[31mFAIL\e[0m"
 fi
-
-
-echo -n "~~players testing~~\n"
-echo -n "~~players testing"
 
 
 

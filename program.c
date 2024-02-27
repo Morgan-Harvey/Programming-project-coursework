@@ -56,7 +56,8 @@ int showMap(){
 int MapGeneration(){
 /* asks and reads maze file, storing it into the 2d array
 add conditions to check the height and width of the maze
-will loop through the 2d array checking for the presence of the symbols on the map*/
+will loop through the 2d array checking for the presence of the symbols on the map
+printf("map has loaded")*/
 }
 
 int UpdateMap(){

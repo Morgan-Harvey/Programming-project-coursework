@@ -9,6 +9,7 @@
 
 # Maze generation
 - test empty maze array
+- irregular maze
 - test maze 101 by 5
 - test maze 101 by 4
 - test maze 4 by 100
@@ -22,6 +23,7 @@
 
 # Player input
 - test unknown input
+- test no input
 - test W input
 - test A input
 - test S input
@@ -32,3 +34,6 @@
 - going through wall below you
 - going through wall to your left
 - going through wall to your right
+
+# goal
+- test reaching the goal
