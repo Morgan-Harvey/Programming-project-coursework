@@ -25,7 +25,10 @@ else
     echo "FAIL"
 fi
 
-ech0
+
+
+
+
 
 
 echo -e "\n~~ File Handling~~"
@@ -49,14 +52,38 @@ else
     echo "FAIL"
 fi
 
-echo -n "Testing file loading - "
+echo -n "Testing successful file loading - "
 ./studentData maps/valid/reg_5x5.txt.txt > tmp
-if grep -q "Error: Bad permissions" tmp;
+if grep -q "Map has loaded succesfully" tmp;
 then
     echo "PASS"
 else
     echo "FAIL"
 fi
+
+
+
+
+
+
+
+
+echo -e "~~Maze generation~~\n"
+echo -n "test empty maze array"
+echo -n "test maze 101 by 5"
+echo -n "test maze 100 by 4"
+echo -n "test maze 4 by 100"
+echo -n "test maze 5 by 101"
+
+
+
+
+
+
+
+
+
+
 
 echo -e "~~Symbol Precense~~\n"
 
@@ -68,8 +95,6 @@ then
 else
     echo "\e[31mFAIL\e[0m"
 fi
-
-
 
 echo -n "no End present"
 ./program maps/invalid/MissingEnd.txt > tmp
@@ -110,14 +135,17 @@ fi
 
 
 
+
+
+
+
 echo -e "~~player input~~\n"
 echo -n "Testing unknown input"
 
-./program maps/valid/dierection_texting.txt < inputs/unknown_input.txt > tmp
+./program maps/valid/direction_testing.txt < inputs/unknown_input.txt > tmp
 if grep -q "Unknown Input detected" tmp;
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
@@ -125,21 +153,63 @@ fi
 
 echo -n "Testing W input"
 
-./program maps/valid/dierection_texting.txt < inputs/Move_up.txt.txt > tmp
-if grep -q "You pressed W";
+./program maps/valid/direction_testing.txt < inputs/Move_up.txt > tmp
+if grep -q "You pressed W" tmp;
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
 
 echo -n "Testing A input"
-./program maps/valid/dierection_texting.txt < inputs/Move_left.txt.txt > tmp
+./program maps/valid/direction_testing.txt < inputs/Move_left.txt > tmp
+if grep -q "You pressed A" tmp;
+then
+    echo "\e[32mPASS\e[0mm"
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+
+echo -n "Testing S input"
+./program maps/valid/direction_testing.txt < inputs/Move_down.txt > tmp
+if grep -q "You pressed S" tmp;
+then
+    echo "\e[32mPASS\e[0mm"
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+echo -n "Testing D input"
+./program maps/valid/direction_texting.txt < inputs/Move_right.txt > tmp
+if grep -q "You have moved right" tmp;
+then
+    echo "\e[32mPASS\e[0mm"
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+
+
+
+
+
+echo -e "~~Boundaries and walls~~\n"
+echo -n "wall above"
+
+./program maps/valid/wall_testing.txt < inputs/Move_up.txt > tmp
+if grep -q "You hit a wall ";
+then
+    echo "\e[32mPASS\e[0mm"
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
+echo -n "Testing A input"
+./program maps/valid/wall_testing.txt < inputs/Move_left.txt > tmp
 if grep -q "You pressed A";
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
@@ -149,55 +219,35 @@ echo -n "Testing S input"
 if grep -q "You pressed S";
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
 
 echo -n "Testing D input"
-./program maps/valid/dierection_texting.txt < inputs/Move_right.txt > tmp
+./program maps/valid/wall_texting.txt < inputs/Move_right.txt > tmp
 if grep -q "You have moved right";
 then
     echo "\e[32mPASS\e[0mm"
-    ((pass_counter++))
 else
     echo "\e[31mFAIL\e[0m"
 fi
 
 
 
-echo -e "~~Maze generation~~\n"
-echo -n "test empty maze array"
-echo -n "test maze 101 by 5"
-echo -n "test maze 101 by 4"
-echo -n "test maze 4 by 100"
-echo -n "test maze 5 by 101"
 
 
-
-if grep -q "Maze Height is too big" ;
-then
-    echo "PASS"
-    ((pass_counter++))
-else
-    echo "FAIL"
-fi
-
-echo -e "~~Boundaries and walls~~\n"
-echo -n "players testing"
-
-if grep ... ;
-then
-    echo "PASS"
-    ((pass_counter++))
-else
-    echo "FAIL"
-fi
 
 
 echo -n "~~Goal~~\n"
 echo -n "reaching the goal"
-./programs 
+./programs maps/valid/reg_5x5.txt < inputs/Goal.txt > tmp;
+if grep -q "you have reached the goal!" tmp
+then
+    echo "\e[32mPASS\e[0mm"
+else
+    echo "\e[31mFAIL\e[0m"
+fi
+
 
 echo -n "~~players testing~~\n"
 echo -n "~~players testing"

@@ -7,6 +7,13 @@
 - bad permissions
 - succesful file loading
 
+# Maze generation
+- test empty maze array
+- test maze 101 by 5
+- test maze 101 by 4
+- test maze 4 by 100
+- test maze 5 by 100
+
 # Symbol generation
 - test no end points
 - test no starting point
@@ -19,13 +26,6 @@
 - test A input
 - test S input
 - test D input
-
-# Maze generation
-- test empty maze array
-- test maze 101 by 5
-- test maze 101 by 4
-- test maze 4 by 100
-- test maze 5 by 100
 
 # boundary walls
 - going through wall above you

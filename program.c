@@ -1,8 +1,9 @@
 int moveUp(){
-    printf("you have moved up");
+
         /*if (there is no wall above you or you have reached the top index)
     {
         // move up
+        printf("you have moved up")
     }
     else{
         // dont move
@@ -11,10 +12,11 @@ int moveUp(){
 }
 
 int moveDown(){
-    printf("you have moved Down");
+
        /*if (there is no wall below you or you have reached the bottom index )
     {
-        // move up
+        // move down
+        peintf("you have moved right")
     }
     else{
         // dont move
@@ -23,10 +25,11 @@ int moveDown(){
 }
 
 int moveLeft(){
-    printf("you have moved Left");
+
     /*if (there is no wall to your left or you have reached the left most index)
     {
-        // move up
+        // move left
+        printf("you have moved left")    
     }
     else{
         // dont move
@@ -35,10 +38,10 @@ int moveLeft(){
 }
 
 int moveRight(){
-    printf("you have moved right");
     /*if (there is no wall to your right or you have reached the rightmostnm index)
     {
-        // move up
+        // move right
+        printf("you have moved right")  
     }
     else{
         // dont move
@@ -51,9 +54,9 @@ int showMap(){
 }
 
 int MapGeneration(){
-// asks and reads maze file, storing it into the 2d array
-// add conditions to check the height and width of the maze
-// will loop through the 2d array checking for the presence of the symbols on the map
+/* asks and reads maze file, storing it into the 2d array
+add conditions to check the height and width of the maze
+will loop through the 2d array checking for the presence of the symbols on the map*/
 }
 
 int UpdateMap(){
@@ -62,7 +65,10 @@ int UpdateMap(){
 
 int goal(){
     
-    // once the index of the player and the goal is the same, will print a congradulation and 
+    /* if( iidnex of the player == index of goal){
+        printf("you have reached the goal!")
+    }
+    */
 }
 
 int main(int argc, char const *argv[])
