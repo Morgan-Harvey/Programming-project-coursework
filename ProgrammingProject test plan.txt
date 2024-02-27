@@ -1,5 +1,13 @@
+# command line arguments
+- no arguments
+- wrong number of args
+
+# file input
+- wrong file name
+- bad permissions
+- succesful file loading
+
 # Symbol generation
-- test no player
 - test no end points
 - test no starting point
 - test mutliple start points
@@ -12,22 +20,12 @@
 - test S input
 - test D input
 
-# command line arguments
-- no arguments
-- wrong number of args
-
-# file input
-- wrong file name
-- bad permissions
-- succesful file loading
-
 # Maze generation
 - test empty maze array
 - test maze 101 by 5
 - test maze 101 by 4
 - test maze 4 by 100
 - test maze 5 by 100
-
 
 # boundary walls
 - going through wall above you
