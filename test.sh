@@ -58,7 +58,7 @@ else
     echo -e "\e[31mFAIL\e[0m"
 fi
 
-echo -e "~~Maze generation~~\n"
+echo -e "\n~~Maze generation~~"
 echo -n "test empty maze array - "
 ./program maps/invalid/Empty_map.txt > tmp
 if grep -q "Map is not valid" tmp;
@@ -150,7 +150,7 @@ fi
 
 
 
-echo -e "~~Symbol Precense~~\n"
+echo -e "\n~~Symbol Precense~~"
 echo -n "no start present - "
 ./program maps/invalid/MissingStart.txt > tmp
 if grep -q "Start is missing" tmp;
@@ -193,7 +193,7 @@ fi
 
 
 
-echo -e "~~player input~~\n"
+echo -e "\n~~player input~~"
 echo -n "Testing unknown input - "
 ./program maps/valid/direction_testing.txt < inputs/unknown_input.txt > tmp
 if grep -q "Unknown Input detected" tmp;
@@ -246,8 +246,8 @@ else
 fi
 
 
-echo -e "~~Boundaries and walls~~\n"
-echo -n " test wall above - "
+echo -e "\n~~Boundaries and walls~~"
+echo -n "test wall above - "
 ./program maps/valid/wall_testing.txt < inputs/Move_up.txt > tmp
 if grep -q "You hit a wall" tmp;
 then
@@ -269,7 +269,7 @@ fi
 
 
 
-echo -n " test Wall below"
+echo -n "test Wall below - "
 ./program maps/valid/wall_testing.txt < inputs/Move_down.txt > tmp
 if grep -q "You hit a wall" tmp;
 then
@@ -290,7 +290,7 @@ fi
 
 
 
-echo -n "~~Goal~~"
+echo -e "\n~~Goal~~"
 echo -n "reaching the goal - "
 ./program maps/valid/reg_5x5.txt < inputs/Goal.txt > tmp;
 if grep -q "you have reached the goal!" tmp;
