@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int moveUp(){
 
         /*if (there is no wall above you or you have reached the top index)
@@ -74,12 +76,16 @@ int goal(){
 
 int main(int argc, char const *argv[])
 {
+
     // Code to allow command line inputs to input files
     //initialises the 2d map array
     
-    /* create a switch in a while loop watching for user inputs
-    each case will represent a users input to move up, down, left and right 
-    as well as show the map of the maze  */
+    /* while(1);
+    switch
+    case w
+    case a
+    case s
+    case d*/
 
-    return 0;
+
 }

@@ -17,6 +17,7 @@
 - test maze 5 by 100
 
 # Symbol generation
+- unknown symbol in map
 - test no end points
 - test no starting point
 - test mutliple start points
