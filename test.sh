@@ -38,7 +38,7 @@ else
     ((fail_counter++))
 fi
 
-
+# tests how the program will handle different file inputs
 ((test_counter++))
 echo -e "\n\e[33m~~ File Handling~~\e[0m"
 echo -n "Test bad mapname - "
@@ -76,6 +76,8 @@ else
     ((fail_counter++))
 fi
 
+# tests how the program handles loading different maze 
+# such as mazes to big or too small irregular mazes and proper maze files
 ((test_counter++))
 echo -e "\n\e[33m~~Maze generation~~\e[0m"
 echo -n "test empty maze array - "
@@ -175,7 +177,8 @@ else
     ((fail_counter++))
 fi
 
-
+# tests the programs ability to validate the symbols present in a maze
+# such as missing, multiple or unkonw characters present in the maze
 ((test_counter++))
 echo -e "\n\e[33m~~Symbol Precense~~\e[0m"
 echo -n "no start present - "
@@ -237,7 +240,8 @@ else
     ((fail_counter++))
 fi
 
-
+# will test all users expected input as well 
+# as how the program handles unknown inputs
 echo -e "\n\e[33m~~player input~~\e[0m"
 ((test_counter++))
 echo -n "Testing unknown input - "
@@ -300,7 +304,8 @@ else
 fi
 
 
-echo -e "\n\e[33m~~Boundaries and walls~~\e[0m"
+# tests how the program handles colliding with the wall of a maze from all sides
+echo -e "\n\e[33m~~walls testing~~\e[0m"
 ((test_counter++))
 echo -n "test wall above - "
 ./program maps/valid/wall_testing.txt < inputs/Move_up.txt > tmp
@@ -349,6 +354,7 @@ else
     ((fail_counter++))
 fi
 
+# tests how the program reacts when the player reaches the exit of the maze
 ((test_counter++))
 echo -e "\n\e[33m~~Goal~~\e[0m"
 echo -n "reaching the goal - "
@@ -363,7 +369,7 @@ else
 fi
 
 echo -e "\n\e[33m~~ Results~~\e[0m"
-# was inspired by the Week 2 lab session'slab sheet
+# was inspired by the Week 2 lab session's lab sheet
 # displays the total number of tests passed and failed as well as the percentage passed
 echo -e "Total tests: $test_counter"
 echo -e "Passed tests: $pass_counter"
