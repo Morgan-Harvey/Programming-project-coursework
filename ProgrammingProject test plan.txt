@@ -25,7 +25,6 @@
 
 # Player input
 - test unknown input
-- test no input
 - test W input
 - test A input
 - test S input

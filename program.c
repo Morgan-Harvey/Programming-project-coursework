@@ -1,53 +1,63 @@
 #include <stdio.h>
 
+
+typedef struct{
+    int rows;
+    int columns;
+    int map[100][100];
+
+}Maze;
+
+
 int moveUp(){
 
-        /*if (there is no wall above you or you have reached the top index)
+        /*if (there is a wall above you or you have reached the top index)
     {
-        // move up
-        printf("you have moved up")
-    }
-    else{
         // dont move
         printf("you have hit a wall");
+    }
+    else{
+                // move up
+        printf("you have moved up")
+
     }*/
 }
 
 int moveDown(){
 
-       /*if (there is no wall below you or you have reached the bottom index )
+       /*if (there is a wall below you or you have reached the bottom index )
     {
-        // move down
-        peintf("you have moved right")
-    }
-    else{
         // dont move
         printf("you have hit a wall");
+    }
+    else{
+                // move up
+        printf("you have moved down")
     }*/
 }
 
 int moveLeft(){
 
-    /*if (there is no wall to your left or you have reached the left most index)
+    /*if (there is a wall to your left or you have reached the left most index)
     {
-        // move left
-        printf("you have moved left")    
-    }
-    else{
         // dont move
         printf("you have hit a wall");
+    }
+    else{
+                // move up
+        printf("you have moved left")
     }*/
 }
 
 int moveRight(){
-    /*if (there is no wall to your right or you have reached the rightmostnm index)
+    /*if (there is a wall to your right or you have reached the right most index)
     {
-        // move right
-        printf("you have moved right")  
-    }
-    else{
         // dont move
         printf("you have hit a wall");
+    }
+    else{
+                // move up
+        printf("you have moved right")
     }*/
 }
 
@@ -56,7 +66,7 @@ int showMap(){
 }
 
 int MapGeneration(){
-/* asks and reads maze file, storing it into the 2d array
+/* asks and reads maze file, storing it into the 2d array struct
 add conditions to check the height and width of the maze
 will loop through the 2d array checking for the presence of the symbols on the map
 printf("map has loaded")*/
@@ -78,14 +88,35 @@ int main(int argc, char const *argv[])
 {
 
     // Code to allow command line inputs to input files
-    //initialises the 2d map array
+
     
     /* while(1);
-    switch
-    case w
-    case a
-    case s
-    case d*/
 
+  switch(expression) {
 
+  case W:
+    Moveup();
+    break;
+
+  case A:
+    moveLeft();
+    break;
+
+     case S:
+    moveDown();
+    break;
+
+  case D:
+    moveRight()
+    break;
+
+case M:
+    ShowMap();
+    break;
+
+  default:
+    printf("unknown input detected")*/
 }
+
+
+
